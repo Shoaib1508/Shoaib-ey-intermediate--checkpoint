@@ -15,13 +15,13 @@
 
         return service; 
 
-        function filterDataByFarm(data, filter) {
-            return _.filter(data, function(data) {return data.farm.Title === filter;});
-        }
+        function filterDataByFarm(data, filter) {
+	filter = filter.toLowerCase();
+return _.filter(data, function(data) 
+{
+return ( filter == "" || data.farm.Title.toLowerCase().indexOf(filter) != -1 ||  data.color.Title.toLowerCase().indexOf(filter) != -1 || data.farm.Owner.Title.toLowerCase().indexOf(filter) != -1 || data.season.Title.toLowerCase().indexOf(filter) != -1);});
+} 
 		
-		 function filterDataBySearchBox(data, filter) {
-			 debugger;
-            return _.filter(data, function(data) {return data.farm.Title === filter;});
-        }
+		
     }
 })();
