@@ -171,3 +171,13 @@ h1 {
 		-webkit-transform: scale(1.0);
 	}
 }
+
+.tomato-navigation__img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-brand{
+    height: 60px;
+    line-height: 30px;
+}

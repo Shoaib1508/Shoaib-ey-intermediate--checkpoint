@@ -1,1 +1,30 @@
-<!-- Add tomato grid here -->
+<div ng-cloak>
+<table>
+<tr>                                    
+<td class="searchLabel"><b> Search: </b></td>
+<td class="searchBox"> <input class="form-control" type="text" ng-model="vm.search" ng-change="vm.updateTable()"> </td> 
+<td></td>
+</tr>
+</table>
+<table class="table table-bordered table-responsive">
+<thead>
+<tr>
+<th>Color</th>
+<th>Cost</th>
+<th>Ounces</th>
+<th>Picked?</th>
+<th>Season</th>
+</tr>
+</thead>
+<tbody>
+<tr dir-paginate="value in vm.gridData | itemsPerPage: 15" pagination-id="vm.listView" >
+<td>{{ ::value.color.Title }}</td>
+<td>{{ ::value.cost }}</td>
+<td>{{ ::value.ounces }}</td>
+<td>{{ ::value.picked?"Yes":"No"}}</td>
+<td>{{ ::value.season.Title }}</td>
+</tr>
+</tbody>
+</table>
+<dir-pagination-controls boundary-links="true" direction-links="true" pagination-id="vm.listView"></dir-pagination-controls>
+</div> 

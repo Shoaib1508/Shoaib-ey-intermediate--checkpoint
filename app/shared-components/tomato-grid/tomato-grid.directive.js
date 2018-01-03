@@ -24,7 +24,15 @@
     TomatoGridController.$inject = ['tomatoGridService'];
  
     function TomatoGridController(tomatoGridService) {
-        var vm = this;
+      var vm = this;
+	 
+vm.search="";
+vm.gridData=tomatoGridService.filterDataByFarm(vm.data,vm.listView);
+vm.gridDataCopy=angular.copy(vm.gridData);
+vm.updateTable=function(){
+vm.gridData= tomatoGridService.filterDataBySearchBox(vm.gridDataCopy,vm.search);
+
     }
+	}
  })();
  
